@@ -1,1 +1,2 @@
 # Faculty-Training-Impact
+Attempt to investigate the impact of university faculty training on self reported sexual misconduct and sexual harassment cases among surveyed university students. Data on sexual misconduct and sexual harassment was utilized from the AAU Campus Climate Survey data from 2015 and 2019, along with John Hopkins Sexual Violence Climate Survey data from 2015. I use a linear regression model to generate my findings of faculty training on sexual misconduct and sexual harassment, as well as impacts on gender and student level.
