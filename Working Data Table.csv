@@ -1,0 +1,41 @@
+Year,School,Gender,Class,Faculty Training,Misconduct,Harassment
+2015,USC,Female,Undergrad,No,0.8,66.2
+2015,USC,Male,Undergrad,No,0,26.3
+2015,USC,Female,Grad,No,0.2,45.2
+2015,USC,Male,Grad,No,0,17.8
+2019,USC,Female,Undergrad,Yes,7.2,66.1
+2019,USC,Male,Undergrad,Yes,3.4,27.6
+2019,USC,Female,Grad,Yes,3.4,43.2
+2019,USC,Male,Grad,Yes,0.3,19.5
+2015,Brown,Female,Undergrad,No,9.9,71
+2015,Brown,Male,Undergrad,No,3.1,52.1
+2015,Brown,Female,Grad,No,2.2,48.2
+2015,Brown,Male,Grad,No,0,30.6
+2019,Brown,Female,Undergrad,Yes,11.4,63.2
+2019,Brown,Male,Undergrad,Yes,3.5,41.8
+2019,Brown,Female,Grad,Yes,2.9,44.4
+2019,Brown,Male,Grad,Yes,1.5,27
+2015,John Hopkins,Female,Undergrad,No,33,55.6
+2015,John Hopkins,Male,Undergrad,No,81,51
+2015,John Hopkins,Female,Grad,No,9,34
+2015,John Hopkins,Male,Grad,No,5,34
+2019,John Hopkins,Female,Undergrad,Yes,10.1,64.6
+2019,John Hopkins,Male,Undergrad,Yes,3.7,46.4
+2019,John Hopkins,Female,Grad,Yes,3.1,30.3
+2019,John Hopkins,Male,Grad,Yes,1.8,20
+2015,Ohio State,Female,Undergrad,No,14.5,60.8
+2015,Ohio State,Male,Undergrad,No,3.6,41.2
+2015,Ohio State,Female,Grad,No,2.5,45
+2015,Ohio State,Male,Grad,No,1.5,32.5
+2019,Ohio State,Female,Undergrad,Yes,13.5,57.5
+2019,Ohio State,Male,Undergrad,Yes,3.3,33.6
+2019,Ohio State,Female,Grad,Yes,3.4,38.3
+2019,Ohio State,Male,Grad,Yes,1.5,26.3
+2015,Georgetown,Female,Undergrad,No,13.7,75.2
+2015,Georgetown,Male,Undergrad,No,5.3,61.8
+2015,Georgetown,Female,Grad,No,3.2,37.9
+2015,Georgetown,Male,Grad,No,1,24.5
+2019,Georgetown,Female,Undergrad,Yes,15.3,71.4
+2019,Georgetown,Male,Undergrad,Yes,5.5,55.6
+2019,Georgetown,Female,Grad,Yes,3.6,35.7
+2019,Georgetown,Male,Grad,Yes,1.5,21
