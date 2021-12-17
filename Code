@@ -1,0 +1,110 @@
+#==============================================================================
+#   1. Settings, packages, and options
+#==============================================================================
+
+# You should generally run all of the commands in Section 1 
+# at the start of every R session
+
+# Clear the working space
+rm(list = ls())
+
+# Set working directory (edit for YOUR econ 42 folder)
+setwd("C:/Users/kahea/Desktop/Homework/2021/Fall/Econ 103B")
+
+# Load the packages 
+library(countrycode)
+library(doBy)
+library(dplyr)
+library(foreign)
+library(gdata)
+library(ggplot2)
+library(knitr)
+library(lmtest)
+library(readstata13)
+library(reshape)
+library(sandwich)
+library(stargazer)
+library(WDI)
+library(XML)
+library(plm)
+library(ivpack)
+library(AER)
+library(AER)
+library(sandwich)
+library(lmtest)
+library(car)
+library(stargazer)
+library(ggplot2)
+library(gdata)
+library(doBy)
+library(dplyr)
+library(plm)
+library(ivpack)
+
+# turn off scientific notation except for big numbers
+options(scipen = 9)
+# function to calculate corrected SEs for regression 
+cse = function(reg) {
+  rob = sqrt(diag(vcovHC(reg, type = "HC1")))
+  return(rob)
+}
+#==============================================================================
+#   2. Data section
+#==============================================================================
+
+### Read data 
+
+# Data input using read.dta (from Stock & Watson textbook site)
+Survey.Data <- read.csv('C:/Users/kahea/Desktop/Homework/2021/Fall/Econ 103B/Working Data Table.csv')
+
+#Summary Statistics for the Data
+summary(Survey.Data)
+
+#Let me just code the treatment dummy real quick
+Survey.Data$D <- ifelse(Survey.Data$Faculty.Training == 'Yes',1,0)# treatment dummy
+Survey.Data$DFemale <- ifelse(Survey.Data$Gender == 'Female', 1, 0)#Gender Dummy
+Survey.Data$DUndergrad<- ifelse(Survey.Data$Class == 'Undergrad', 1, 0)#Class Dummy
+
+
+#   3. Analysis section
+#==============================================================================
+
+summary(Survey.Data$Misconduct)
+summary(Survey.Data$Harassment)
+
+
+### Run the regressions
+
+#Create Misconduct Regressions
+reg1 <- lm(Misconduct ~ D, data=Survey.Data)
+reg2 <- lm(Misconduct ~ D + DFemale + DUndergrad, data=Survey.Data)
+reg3 <- lm(Misconduct ~ D+ DFemale + D*DFemale, data=Survey.Data)
+reg4 <- lm(Misconduct ~ D + DUndergrad + D*DUndergrad, data=Survey.Data)
+
+# Report regression on misconduct
+stargazer(reg1,
+          se=list(cse(reg1)), 
+          title="Effect on Misconduct", type="text", 
+          df=FALSE, digits=3)
+
+stargazer(reg1, reg2, reg3, reg4,
+          se=list(cse(reg1),cse(reg2),cse(reg3),cse(reg4)), 
+          title="Effect on Misconduct", type="text", 
+          df=FALSE, digits=3)
+
+#Create Harassment Regressions
+reg5 <- lm(Harassment ~ D, data=Survey.Data)
+reg6 <- lm(Harassment ~ D + DFemale + DUndergrad, data=Survey.Data)
+reg7 <- lm(Harassment ~ D+ DFemale + D*DFemale, data=Survey.Data)
+reg8 <- lm(Harassment ~ D + DUndergrad + D*DUndergrad, data=Survey.Data)
+
+#Report regression on harassment
+stargazer(reg5,
+          se=list(cse(reg5)), 
+          title="Effect on Harassment", type="text", 
+          df=FALSE, digits=3)
+
+stargazer(reg5, reg6, reg7, reg8,
+          se=list(cse(reg3),cse(reg4),cse(reg5),cse(reg6)), 
+          title="Effect on Harassment", type="text", 
+          df=FALSE, digits=3)
